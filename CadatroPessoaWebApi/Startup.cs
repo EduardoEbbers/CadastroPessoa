@@ -1,3 +1,7 @@
+using CadatroPessoaWebApi.Models;
+using CadatroPessoaWebApi.Repositories;
+using CadatroPessoaWebApi.Repositories.Dao;
+using CadatroPessoaWebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,10 +32,20 @@ namespace CadatroPessoaWebApi
         {
 
             services.AddControllers();
+            
+            //services.AddDbContext<cadastropessoaContext>(opt => opt.UseInMemoryDatabase("PessoaList"));
+
+            services.AddScoped<IService<Pessoa>, PessoaService>();
+            
+            services.AddScoped<IRepository<Pessoa>, PessoaRepository>();
+            services.AddScoped<IDao<Pessoa>, Dao<Pessoa>>();
+            
+            /*
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CadatroPessoaWebApi", Version = "v1" });
             });
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,8 +54,9 @@ namespace CadatroPessoaWebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CadatroPessoaWebApi v1"));
+                
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CadatroPessoaWebApi v1"));
             }
 
             app.UseHttpsRedirection();

@@ -8,6 +8,10 @@ namespace CadatroPessoaWebApi.Repositories.Dao
 {
     public interface IDao<T> where T : class
     {
-
+        T Insert(T t);
+        IList<T> GetAll();
+        T GetById(Expression<Func<T, bool>> predicate);
+        T Update(T t);
+        void Delete(Func<T, bool> predicate);
     }
 }
