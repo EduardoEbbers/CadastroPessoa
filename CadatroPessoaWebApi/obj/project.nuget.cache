@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9GqSogIBQM9hJilji0hFrxsHqDl2Fx+tFdYZ4xJTubXQsOXT6C6UL/QUsr4HsT2ZLqpX9UV50amFtOtiLIKxsQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\celeb\\source\\repos\\TrabalhoPIMVIII\\CadatroPessoaWebApi\\CadatroPessoaWebApi\\CadatroPessoaWebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\celeb\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\celeb\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\celeb\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\celeb\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\celeb\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\celeb\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
