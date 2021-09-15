@@ -1,8 +1,10 @@
-﻿using CadatroPessoaWebApi.Models;
+﻿using CadatroPessoaWebApi.Exceptions;
+using CadatroPessoaWebApi.Models;
 using CadatroPessoaWebApi.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CadatroPessoaWebApi.Services
@@ -46,21 +48,21 @@ namespace CadatroPessoaWebApi.Services
 
         public async Task<Pessoa> GetById(int id)
         {
-            Pessoa _pes = null;
+            Pessoa _pes;
             try
             {
                 _pes = _pessoaRepository.GetById(id);
             }
             catch (Exception ex)
             {
-                //throw new HttpExceptions(ex.Message, HttpStatusCode.NotFound);
+                throw new HttpException(ex.Message, HttpStatusCode.NotFound);
             }
             return _pes;
         }
 
         public async Task<Pessoa> Update(Pessoa pessoa)
         {
-            Pessoa _pes = null;
+            Pessoa _pes;
             try
             {
                 _pes = _pessoaRepository.Update(pessoa);
@@ -68,7 +70,7 @@ namespace CadatroPessoaWebApi.Services
             }
             catch (Exception ex)
             {
-                //throw new HttpExceptions(ex.Message, HttpStatusCode.NotFound);
+                throw new HttpException(ex.Message, HttpStatusCode.NotFound);
             }
             return _pes;
         }
@@ -81,7 +83,7 @@ namespace CadatroPessoaWebApi.Services
             }
             catch (Exception ex)
             {
-                //throw new HttpExceptions(ex.Message, HttpStatusCode.NotFound);
+                throw new HttpException(ex.Message, HttpStatusCode.NotFound);
             }
         }
     }

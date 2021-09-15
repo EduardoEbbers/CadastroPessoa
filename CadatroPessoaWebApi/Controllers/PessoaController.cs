@@ -1,9 +1,11 @@
-﻿using CadatroPessoaWebApi.Models;
+﻿using CadatroPessoaWebApi.Exceptions;
+using CadatroPessoaWebApi.Models;
 using CadatroPessoaWebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CadatroPessoaWebApi.Controllers
@@ -26,48 +28,33 @@ namespace CadatroPessoaWebApi.Controllers
             Pessoa _pes;
             try
             {
-                /*
                 //PessoaValidacao.ValidarPessoa([pessoa, pessoa.Cpf]);
                 if (pessoa.Nome == null || pessoa.Cpf == null)
                 {
-                    throw new HttpExceptions("Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
-                */
                 _pes = await _pessoaService.Create(pessoa);
-            } catch(Exception ex)
-            {
-                return null;
             }
-            /*
-            catch (HttpExceptions e)
+            catch (HttpException e)
             {
-                return e.HttpMessageExceptions();
+                return e.HttpMessageException();
             }
-            */
-            //return CreatedAtAction(nameof(GetById), new { id = pessoa.Id }, _pes);
             return CreatedAtAction(nameof(GetById), new { id = pessoa.IdPessoa }, _pes);
-            //return Ok(_pes);
         }
 
         // GET: api/pessoa
         [HttpGet]
         public async Task<ActionResult<IList<Pessoa>>> GetAll()
         {
-            IList<Pessoa> _pes = null;
+            IList<Pessoa> _pes;
             try
             {
                 _pes = await _pessoaService.GetAll();
-            } catch(Exception ex)
+            } 
+            catch (HttpException e)
             {
-
+                return e.HttpMessageException();
             }
-            // ta faltando ajeitar esta parte
-            /*
-            catch (HttpExceptions e)
-            {
-                return e.HttpMessageExceptions();
-            }
-            */
             return Ok(_pes);
         }
 
@@ -75,24 +62,19 @@ namespace CadatroPessoaWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Pessoa>> GetById(int id)
         {
-            Pessoa _pes = null;
+            Pessoa _pes;
             try
             {
                 if (id <= 0)
                 {
-                    //throw new HttpExceptions("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _pes = await _pessoaService.GetById(id);
-            } catch(Exception ex)
+            } 
+            catch (HttpException e)
             {
-
+                return e.HttpMessageException();
             }
-            /*
-            catch (HttpExceptions e)
-            {
-                return e.HttpMessageExceptions();
-            }
-            */
             return Ok(_pes);
         }
 
@@ -100,29 +82,23 @@ namespace CadatroPessoaWebApi.Controllers
         [HttpPut]
         public async Task<ActionResult<Pessoa>> Update(Pessoa pessoa)
         {
-            Pessoa _pes = null;
+            Pessoa _pes;
             try
             {
                 if (pessoa.IdPessoa == 0 || pessoa.Nome == null || pessoa.Cpf == null)
                 {
-                    //throw new HttpExceptions("Id, Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id, Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
-
                 if (pessoa.IdPessoa < 0)
                 {
-                    //throw new HttpExceptions("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _pes = await _pessoaService.Update(pessoa);
-            } catch(Exception ex)
+            } 
+            catch (HttpException e)
             {
-
+                return e.HttpMessageException();
             }
-            /*
-            catch (HttpExceptions e)
-            {
-                return e.HttpMessageExceptions();
-            }
-            */
             return Ok(_pes);
         }
 
@@ -134,19 +110,14 @@ namespace CadatroPessoaWebApi.Controllers
             {
                 if (id <= 0)
                 {
-                    //throw new HttpExceptions("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _pessoaService.Delete(id);
-            } catch(Exception ex)
-            {
-
             }
-            /*
-            catch (HttpExceptions e)
+            catch (HttpException e)
             {
-                return e.HttpMessageExceptions();
+                return e.HttpMessageException();
             }
-            */
             return NoContent();
         }
     }

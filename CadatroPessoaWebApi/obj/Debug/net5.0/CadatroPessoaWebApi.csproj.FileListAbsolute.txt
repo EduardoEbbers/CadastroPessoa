@@ -48,3 +48,7 @@ C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWeb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.pdb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.genruntimeconfig.cache
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.csproj.AssemblyReference.cache
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
