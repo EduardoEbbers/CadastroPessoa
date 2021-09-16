@@ -30,7 +30,9 @@ namespace CadatroPessoaWebApi.Controllers
             try
             {
                 //PessoaValidacao.ValidarPessoa([pessoa, pessoa.Cpf]);
-                if (pessoa.Nome == null || pessoa.Cpf == null || pessoa.IdEndereco == 0)
+                if (pessoa.Nome == null || 
+                    pessoa.Cpf == null || 
+                    pessoa.IdEndereco == 0)
                 {
                     throw new HttpException("Nome, CPF e Id Endereço são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
@@ -91,7 +93,10 @@ namespace CadatroPessoaWebApi.Controllers
             Pessoa _pes;
             try
             {
-                if (pessoa.IdPessoa == 0 || pessoa.Nome == null || pessoa.Cpf == null || pessoa.IdEndereco == 0)
+                if (pessoa.IdPessoa == 0 || 
+                    pessoa.Nome == null || 
+                    pessoa.Cpf == null || 
+                    pessoa.IdEndereco == 0)
                 {
                     throw new HttpException("Id Pessoa, Nome, CPF e Id Endereço são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
