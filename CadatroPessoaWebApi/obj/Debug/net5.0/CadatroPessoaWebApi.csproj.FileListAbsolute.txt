@@ -12,6 +12,8 @@ C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWeb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\K4os.Compression.LZ4.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Web.Http.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -23,6 +25,8 @@ C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWeb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Ubiety.Dns.Core.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Zstandard.Net.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\MySql.Data.EntityFrameworkCore.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Renci.SshNet.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\SshNet.Security.Cryptography.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -47,8 +51,3 @@ C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWeb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\ref\CadatroPessoaWebApi.dll
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.pdb
 C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.genruntimeconfig.cache
-C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\obj\Debug\net5.0\CadatroPessoaWebApi.csproj.AssemblyReference.cache
-C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Net.Http.Formatting.dll
-C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\System.Web.Http.dll
-C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\celeb\source\repos\TrabalhoPIMVIII\CadatroPessoaWebApi\CadatroPessoaWebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

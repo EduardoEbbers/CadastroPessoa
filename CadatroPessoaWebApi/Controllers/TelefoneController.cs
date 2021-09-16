@@ -114,7 +114,7 @@ namespace CadatroPessoaWebApi.Controllers
             }
             catch (HttpException e)
             {
-                return e.HttpMessageExceptions();
+                return e.HttpMessageException();
             }
             return Ok(_tel);
         }
