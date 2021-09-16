@@ -1,5 +1,6 @@
 ﻿using CadatroPessoaWebApi.Models;
 using CadatroPessoaWebApi.Repositories.Dao;
+using CadatroPessoaWebApi.Repositories.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,7 @@ namespace CadatroPessoaWebApi.Repositories
                 {
                     _pes.Nome = pessoa.Nome;
                     _pes.Cpf = pessoa.Cpf;
+                    //_pes.IdEndereco = pessoa.IdEndereco ??
                     _pes = _pessoaDao.Update(_pes);
                 }
             }

@@ -10,9 +10,17 @@ namespace CadatroPessoaWebApi.Models
             PessoaTelefone = new HashSet<PessoaTelefone>();
         }
 
+        public Pessoa(int idPessoa, string nome, string cpf, int idEndereco)
+        {
+            this.IdPessoa = idPessoa;
+            this.Nome = nome;
+            this.Cpf = cpf;
+            this.IdEndereco = idEndereco;
+        }
+
         public int IdPessoa { get; set; }
         public string Nome { get; set; }
-        public long Cpf { get; set; }
+        public string Cpf { get; set; }
         public int IdEndereco { get; set; }
 
         public virtual Endereco Endereco { get; set; }

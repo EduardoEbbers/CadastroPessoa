@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CadatroPessoaWebApi.Controllers
 {
-    public interface IController<T> where T : class
+    public interface IController<S, T> where S : class
     {
-        Task<ActionResult<T>> Post(T t);
-        Task<ActionResult<IList<T>>> GetAll();
-        Task<ActionResult<T>> GetById(int id);
-        Task<ActionResult<T>> Update(T t);
+        Task<ActionResult<S>> Post(T t);  
+        Task<ActionResult<IList<S>>> GetAll();
+        Task<ActionResult<S>> GetById(int id);
+        Task<ActionResult<S>> Update(T t);
         ActionResult Delete(int id);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CadatroPessoaWebApi.Exceptions;
 using CadatroPessoaWebApi.Models;
 using CadatroPessoaWebApi.Repositories;
+using CadatroPessoaWebApi.Repositories.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

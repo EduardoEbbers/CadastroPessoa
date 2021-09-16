@@ -1,5 +1,6 @@
 ﻿using CadatroPessoaWebApi.Exceptions;
 using CadatroPessoaWebApi.Models;
+using CadatroPessoaWebApi.Repositories.Dto;
 using CadatroPessoaWebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,7 +13,7 @@ namespace CadatroPessoaWebApi.Controllers
 {
     [Route("api/pessoa")]
     [ApiController]
-    public class PessoaController : ControllerBase, IController<Pessoa>
+    public class PessoaController : ControllerBase, IController<Pessoa, PessoaDto>
     {
         private readonly IService<Pessoa> _pessoaService;
 
@@ -23,23 +24,28 @@ namespace CadatroPessoaWebApi.Controllers
 
         // POST: api/pessoa
         [HttpPost]
-        public async Task<ActionResult<Pessoa>> Post(Pessoa pessoa)
+        public async Task<ActionResult<Pessoa>> Post(PessoaDto pessoa)
         {
             Pessoa _pes;
             try
             {
                 //PessoaValidacao.ValidarPessoa([pessoa, pessoa.Cpf]);
-                if (pessoa.Nome == null || pessoa.Cpf == null)
+                if (pessoa.Nome == null || pessoa.Cpf == null || pessoa.IdEndereco == 0)
                 {
-                    throw new HttpException("Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Nome, CPF e Id Endereço são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
-                _pes = await _pessoaService.Create(pessoa);
+                if(pessoa.IdEndereco < 0)
+                {
+                    throw new HttpException("Id Endereço Incorreto!", HttpStatusCode.BadRequest);
+                }
+
+                _pes = await _pessoaService.Create(pessoa.ParseToObject());
             }
             catch (HttpException e)
             {
                 return e.HttpMessageException();
             }
-            return CreatedAtAction(nameof(GetById), new { id = pessoa.IdPessoa }, _pes);
+            return CreatedAtAction(nameof(GetById), new { id = _pes.IdPessoa }, _pes);
         }
 
         // GET: api/pessoa
@@ -67,7 +73,7 @@ namespace CadatroPessoaWebApi.Controllers
             {
                 if (id <= 0)
                 {
-                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Pessoa Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _pes = await _pessoaService.GetById(id);
             } 
@@ -80,20 +86,24 @@ namespace CadatroPessoaWebApi.Controllers
 
         // PUT: api/pessoa
         [HttpPut]
-        public async Task<ActionResult<Pessoa>> Update(Pessoa pessoa)
+        public async Task<ActionResult<Pessoa>> Update(PessoaDto pessoa)
         {
             Pessoa _pes;
             try
             {
-                if (pessoa.IdPessoa == 0 || pessoa.Nome == null || pessoa.Cpf == null)
+                if (pessoa.IdPessoa == 0 || pessoa.Nome == null || pessoa.Cpf == null || pessoa.IdEndereco == 0)
                 {
-                    throw new HttpException("Id, Nome e CPF são Obrigatórios!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Pessoa, Nome, CPF e Id Endereço são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
                 if (pessoa.IdPessoa < 0)
                 {
-                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Pessoa Incorreto!", HttpStatusCode.BadRequest);
                 }
-                _pes = await _pessoaService.Update(pessoa);
+                if (pessoa.IdEndereco < 0)
+                {
+                    throw new HttpException("Id Endereço Incorreto!", HttpStatusCode.BadRequest);
+                }
+                _pes = await _pessoaService.Update(pessoa.ParseToObject());
             } 
             catch (HttpException e)
             {
@@ -110,7 +120,7 @@ namespace CadatroPessoaWebApi.Controllers
             {
                 if (id <= 0)
                 {
-                    throw new HttpException("ID Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Pessoa Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _pessoaService.Delete(id);
             }

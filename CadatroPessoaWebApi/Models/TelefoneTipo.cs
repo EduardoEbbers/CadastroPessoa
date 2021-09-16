@@ -10,6 +10,11 @@ namespace CadatroPessoaWebApi.Models
             Telefone = new HashSet<Telefone>();
         }
 
+        public TelefoneTipo(int idTelefoneTipo, string tipo)
+        {
+            this.IdTelefoneTipo = idTelefoneTipo;
+            this.Tipo = tipo;
+        }
         public int IdTelefoneTipo { get; set; }
         public string Tipo { get; set; }
 

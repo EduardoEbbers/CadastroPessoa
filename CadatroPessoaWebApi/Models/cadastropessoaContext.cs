@@ -79,13 +79,16 @@ namespace CadatroPessoaWebApi.Models
                     .Property(e => e.IdPessoa)
                     .HasColumnName("id_pessoa")
                     .ValueGeneratedOnAdd();
-                entity.Property(e => e.Nome)
+                entity
+                    .Property(e => e.Nome)
                     .IsRequired()
                     .HasColumnName("nome")
                     .HasMaxLength(256);
                 entity
                     .Property(e => e.Cpf)
-                    .HasColumnName("cpf");
+                    .IsRequired()
+                    .HasColumnName("cpf")
+                    .HasMaxLength(11);
                 entity
                     .Property(e => e.IdEndereco)
                     .HasColumnName("id_endereco");
