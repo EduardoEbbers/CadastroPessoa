@@ -36,10 +36,21 @@ namespace CadatroPessoaWebApi
             //services.AddDbContext<cadastropessoaContext>(opt => opt.UseInMemoryDatabase("PessoaList"));
 
             services.AddScoped<IService<Pessoa>, PessoaService>();
-            
             services.AddScoped<IRepository<Pessoa>, PessoaRepository>();
             services.AddScoped<IDao<Pessoa>, Dao<Pessoa>>();
-            
+
+            services.AddScoped<IService<Endereco>, EnderecoService>();
+            services.AddScoped<IRepository<Endereco>, EnderecoRepository>();
+            services.AddScoped<IDao<Endereco>, Dao<Endereco>>();
+
+            services.AddScoped<IService<Telefone>, TelefoneService>();
+            services.AddScoped<IRepository<Telefone>, TelefoneRepository>();
+            services.AddScoped<IDao<Telefone>, Dao<Telefone>>();
+
+            services.AddScoped<IService<TelefoneTipo>, TelefoneTipoService>();
+            services.AddScoped<IRepository<TelefoneTipo>, TelefoneTipoRepository>();
+            services.AddScoped<IDao<TelefoneTipo>, Dao<TelefoneTipo>>();
+
             /*
             services.AddSwaggerGen(c =>
             {

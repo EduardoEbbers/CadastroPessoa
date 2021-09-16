@@ -13,22 +13,25 @@ namespace CadatroPessoaWebApi.Services
     public class PessoaService : IService<Pessoa>
     {
         private IRepository<Pessoa> _pessoaRepository;
-
-        public PessoaService(IRepository<Pessoa> pessoaRepository)
+        private IRepository<Endereco> _enderecoRepository;
+        public PessoaService(IRepository<Pessoa> pessoaRepository, IRepository<Endereco> enderecoRepository)
         {
             _pessoaRepository = pessoaRepository;
+            _enderecoRepository = enderecoRepository;
         }
 
         public async Task<Pessoa> Create(Pessoa pessoa)
         {
             Pessoa _pes;
+            Endereco _end;
             try
             {
+                _end = _enderecoRepository.GetById(pessoa.IdEndereco);
                 _pes = _pessoaRepository.Insert(pessoa);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new HttpException(ex.Message, HttpStatusCode.NotFound);
             }
             return _pes;
         }
@@ -64,8 +67,10 @@ namespace CadatroPessoaWebApi.Services
         public async Task<Pessoa> Update(Pessoa pessoa)
         {
             Pessoa _pes;
+            Endereco _end;
             try
             {
+                _end = _enderecoRepository.GetById(pessoa.IdEndereco);
                 _pes = _pessoaRepository.Update(pessoa);
 
             }

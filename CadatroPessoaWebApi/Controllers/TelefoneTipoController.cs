@@ -71,7 +71,7 @@ namespace CadatroPessoaWebApi.Controllers
             {
                 if (id <= 0)
                 {
-                    throw new HttpException("Id Telefone Tipo Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Tipo de Telefone Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _telTip = await _telefoneTipoService.GetById(id);
             }
@@ -92,12 +92,12 @@ namespace CadatroPessoaWebApi.Controllers
                 if (telefoneTipo.IdTelefoneTipo == 0 
                     || telefoneTipo.Tipo == null)
                 {
-                    throw new HttpException("Id Telefone Tipo e Tipo é Obrigatório!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Tipo de Telefone e Tipo de Telefone é Obrigatório!", HttpStatusCode.BadRequest);
                 }
 
                 if (telefoneTipo.IdTelefoneTipo < 0)
                 {
-                    throw new HttpException("Id Telefone Tipo Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Tipo de Telefone Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _telTip = await _telefoneTipoService.Update(telefoneTipo.ParseToObject());
             }
@@ -116,7 +116,7 @@ namespace CadatroPessoaWebApi.Controllers
             {
                 if (id <= 0)
                 {
-                    throw new HttpException("Id Telefone Tipo Incorreto!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Id Tipo de Telefone Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _telefoneTipoService.Delete(id);
             }

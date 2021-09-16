@@ -38,9 +38,16 @@ namespace CadatroPessoaWebApi.Controllers
                     endereco.Cidade == null ||
                     endereco.Estado == null)
                 {
-                    throw new HttpException("Logradouro, Número, Cep, Bairro, Cidade e Estado são Obrigatórios!", HttpStatusCode.BadRequest);
+                    throw new HttpException("Logradouro, Número, CEP, Bairro, Cidade e Estado são Obrigatórios!", HttpStatusCode.BadRequest);
                 }
-
+                if(endereco.Numero < 0)
+                {
+                    throw new HttpException("Número Incorreto!", HttpStatusCode.BadRequest);
+                }
+                if (endereco.Cep < 0)
+                {
+                    throw new HttpException("CEP Incorreto!", HttpStatusCode.BadRequest);
+                }
                 _end = await _enderecoService.Create(endereco.ParseToObject());
             }
             catch (HttpException e)
@@ -108,6 +115,14 @@ namespace CadatroPessoaWebApi.Controllers
                 if (endereco.IdEndereco < 0)
                 {
                     throw new HttpException("Id Endereço Incorreto!", HttpStatusCode.BadRequest);
+                }
+                if (endereco.Numero < 0)
+                {
+                    throw new HttpException("Número Incorreto!", HttpStatusCode.BadRequest);
+                }
+                if (endereco.Cep < 0)
+                {
+                    throw new HttpException("CEP Incorreto!", HttpStatusCode.BadRequest);
                 }
                 _end = await _enderecoService.Update(endereco.ParseToObject());
             }
